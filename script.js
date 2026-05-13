@@ -190,14 +190,17 @@ if (loginForm) {
             localStorage.setItem('isLoggedIn', 'true');
             // Change UI to show success
             const loginCard = document.querySelector('.login-card');
-            if (loginCard) {
-                loginCard.innerHTML = `
-                    <div style="text-align: center; padding: 2rem 0;">
-                        <h3 style="color: #f4d068; font-family: 'Cinzel', serif; margin-bottom: 1rem;">Access Granted</h3>
-                        <p style="color: rgba(255,255,255,0.7);">Welcome back. Your adventure continues.</p>
-                    </div>
-                `;
-            }
+                if (loginCard) {
+                    loginCard.innerHTML = `
+                        <div style="text-align: center; padding: 2rem 0;">
+                            <h3 style="color: #f4d068; font-family: 'Cinzel', serif; margin-bottom: 1rem;">Access Granted</h3>
+                            <p style="color: rgba(255,255,255,0.7);">Redirecting to your personalized dashboard...</p>
+                        </div>
+                    `;
+                    setTimeout(() => {
+                        window.location.href = 'onboarding.html';
+                    }, 2000);
+                }
         }
     });
 }
