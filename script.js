@@ -23,7 +23,8 @@ let loadedCount = 0;
 
 // Path to the provided ZIP image sequence
 const currentFrame = index => (
-    `ezgif-281cbf54fb9f87e4-jpg/ezgif-frame-${(index + 1).toString().padStart(3, '0')}.jpg`
+    `testing/sample.jpg`// [TESTING]
+    // `ezgif-281cbf54fb9f87e4-jpg/ezgif-frame-${(index + 1).toString().padStart(3, '0')}.jpg` // [MAIN]
 );
 
 // Preload images sequentially to ensure smooth playability
@@ -176,28 +177,3 @@ audioToggle.addEventListener('click', () => {
 
 // Start render loop
 render();
-
-// Handle form authentication simulation from the inline card
-const loginForm = document.getElementById('loginForm');
-if (loginForm) {
-    loginForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
-
-        if (email && password) {
-            localStorage.setItem('isLoggedIn', 'true');
-            // Change UI to show success
-            const loginCard = document.querySelector('.login-card');
-            if (loginCard) {
-                loginCard.innerHTML = `
-                    <div style="text-align: center; padding: 2rem 0;">
-                        <h3 style="color: #f4d068; font-family: 'Cinzel', serif; margin-bottom: 1rem;">Access Granted</h3>
-                        <p style="color: rgba(255,255,255,0.7);">Welcome back. Your adventure continues.</p>
-                    </div>
-                `;
-            }
-        }
-    });
-}
