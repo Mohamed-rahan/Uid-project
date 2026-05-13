@@ -99,21 +99,41 @@
             <div class="content center">
                 <p class="subtitle">START YOUR JOURNEY</p>
                 <h2>WHERE NEXT?</h2>
-                <p class="description">Log in to start your journey now</p>
+                <p class="description">Log in or create an account to start your journey now</p>
                 <div class="login-card">
+                    
+                    <!-- Auth Tabs [Switch b/w tabs] -->
+                    <div class="auth-tabs">
+                        <button class="auth-tab active" onclick="toggleAuth('login')" id="tab-login">Log In</button>
+                        <button class="auth-tab" onclick="toggleAuth('signup')" id="tab-signup">Sign Up</button>
+                    </div>
+
+                    <!-- Login Form -->
                     <form class="login-form" id="loginForm">
-                        <input type="email" class="login-input" id="email" placeholder="Enter your email" required>
-                        <input type="password" class="login-input" id="password" placeholder="Enter your password" required>
+                        <input type="email" class="login-input" id="loginEmail" placeholder="Enter your email" required>
+                        <input type="password" class="login-input" id="loginPassword" placeholder="Enter your password" required>
                         <button type="submit" class="login-btn">
                             Log In
                         </button>
                     </form>
+
+                    <!-- Sign Up Form (Hidden initially) -->
+                    <form class="login-form" id="signupForm" style="display: none;">
+                        <input type="text" class="login-input" id="signupName" placeholder="Full Name" required>
+                        <input type="email" class="login-input" id="signupEmail" placeholder="Enter your email" required>
+                        <input type="password" class="login-input" id="signupPassword" placeholder="Create a password" required>
+                        <button type="submit" class="login-btn">
+                            Sign Up
+                        </button>
+                    </form>
+
                 </div>
             </div>
         </section>
     </div>
 
     <script src="script.js?v=2"></script>
+    <script src="auth.js"></script>
 </body>
 
 </html>
