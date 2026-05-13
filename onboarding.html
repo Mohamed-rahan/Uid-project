@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journey Across | Craft Your Journey</title>
+    <link rel="stylesheet" href="onboarding.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:wght@300;400;600&family=Outfit:wght@200;400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="loader">
+        <div class="loader-content">
+            <h2 class="loader-logo">JOURNEY ACROSS</h2>
+            <div class="loader-bar-wrap">
+                <div id="loader-bar"></div>
+            </div>
+            <p id="loader-status">Initializing Concierge AI...</p>
+        </div>
+    </div>
+
+    <!-- Background Canvas for Cinematic Continuity -->
+    <canvas id="bg-canvas"></canvas>
+    <div class="vignette"></div>
+
+    <!-- Navigation Overlay -->
+    <nav class="onboarding-nav">
+        <div class="brand">JOURNEY ACROSS</div>
+        <div class="progress-indicator">
+            <span class="current-step">01</span>
+            <div class="progress-track">
+                <div id="progress-fill"></div>
+            </div>
+            <span class="total-steps">07</span>
+        </div>
+    </nav>
+
+    <main class="onboarding-container" id="scroll-container">
+        <!-- SECTION 1: CINEMATIC INTRO -->
+        <section class="onboarding-section" id="intro" data-index="1">
+            <div class="section-content center">
+                <p class="section-tag">Welcome Back</p>
+                <h1 class="glitch-text" data-text="Craft Your Perfect Journey">Craft Your Perfect Journey</h1>
+                <p class="section-subtitle">Tell us your travel preferences so we can curate unforgettable experiences.</p>
+                <button class="cta-button primary" id="begin-btn">
+                    <span>Begin Experience</span>
+                    <div class="btn-glow"></div>
+                </button>
+            </div>
+            <div class="scroll-hint">
+                <span>Scroll to Explore</span>
+                <div class="mouse-icon">
+                    <div class="wheel"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: BUDGET PREFERENCES -->
+        <section class="onboarding-section" id="budget" data-index="2">
+            <div class="section-content">
+                <p class="section-tag">Step 02</p>
+                <h2 class="section-title">Investment in Experience</h2>
+                <p class="section-question">How much would you like to spend on your journey?</p>
+                
+                <div class="options-grid card-style">
+                    <div class="option-card glass-card" data-value="budget" data-category="budget">
+                        <div class="card-bg" style="background-image: url('ezgif-281cbf54fb9f87e4-jpg/ezgif-frame-010.jpg')"></div>
+                        <div class="card-overlay"></div>
+                        <div class="card-content">
+                            <h3>Budget Explorer</h3>
+                            <p>Authentic local experiences on a conscious scale.</p>
+                        </div>
+                        <div class="selection-check"></div>
+                    </div>
+                    <div class="option-card glass-card" data-value="comfort" data-category="budget">
+                        <div class="card-bg" style="background-image: url('ezgif-281cbf54fb9f87e4-jpg/ezgif-frame-030.jpg')"></div>
+                        <div class="card-overlay"></div>
+                        <div class="card-content">
+                            <h3>Comfort Traveler</h3>
+                            <p>Enhanced amenities and premium boutique stays.</p>
+                        </div>
+                        <div class="selection-check"></div>
+                    </div>
+                    <div class="option-card glass-card" data-value="luxury" data-category="budget">
+                        <div class="card-bg" style="background-image: url('ezgif-281cbf54fb9f87e4-jpg/ezgif-frame-050.jpg')"></div>
+                        <div class="card-overlay"></div>
+                        <div class="card-content">
+                            <h3>Luxury Escape</h3>
+                            <p>Uncompromising quality and exclusive access.</p>
+                        </div>
+                        <div class="selection-check"></div>
+                    </div>
+                    <div class="option-card glass-card" data-value="ultra" data-category="budget">
+                        <div class="card-bg" style="background-image: url('ezgif-281cbf54fb9f87e4-jpg/ezgif-frame-070.jpg')"></div>
+                        <div class="card-overlay"></div>
+                        <div class="card-content">
+                            <h3>Ultra Luxury</h3>
+                            <p>Private jets, rare destinations, and absolute privacy.</p>
+                        </div>
+                        <div class="selection-check"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: TRIP DURATION -->
+        <section class="onboarding-section" id="duration" data-index="3">
+            <div class="section-content">
+                <p class="section-tag">Step 03</p>
+                <h2 class="section-title">The Temporal Flow</h2>
+                <p class="section-question">How long do you want your escape to be?</p>
+                
+                <div class="pill-container">
+                    <div class="pill-option" data-value="weekend" data-category="duration">Weekend Getaway</div>
+                    <div class="pill-option" data-value="1week" data-category="duration">1 Week</div>
+                    <div class="pill-option" data-value="2weeks" data-category="duration">2 Weeks</div>
+                    <div class="pill-option" data-value="1month" data-category="duration">1 Month+</div>
+                    <div class="pill-option" id="custom-pill" data-value="custom" data-category="duration">Custom Duration</div>
+                </div>
+
+                <div class="custom-input-wrap" id="custom-duration-input">
+                    <input type="text" placeholder="Enter number of days..." class="glass-input">
+                    <div class="input-glow"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: EXPERIENCE TYPE -->
+        <section class="onboarding-section" id="experience" data-index="4">
+            <div class="section-content">
+                <p class="section-tag">Step 04</p>
+                <h2 class="section-title">The Essence of Travel</h2>
+                <p class="section-question">What kind of experience are you seeking?</p>
+                
+                <div class="experience-grid">
+                    <div class="exp-card glass-card multi" data-value="adventure" data-category="experience">
+                        <div class="exp-bg" style="background-image: url('ezgif-281cbf54fb9f87e4-jpg/ezgif-frame-090.jpg')"></div>
+                        <span>Adventure</span>
+                    </div>
+                    <div class="exp-card glass-card multi" data-value="culture" data-category="experience">
+                        <div class="exp-bg" style="background-image: url('ezgif-281cbf54fb9f87e4-jpg/ezgif-frame-110.jpg')"></div>
+                        <span>Culture</span>
+                    </div>
+                    <div class="exp-card glass-card multi" data-value="wellness" data-category="experience">
+                        <div class="exp-bg" style="background-image: url('ezgif-281cbf54fb9f87e4-jpg/ezgif-frame-130.jpg')"></div>
+                        <span>Wellness</span>
+                    </div>
+                    <div class="exp-card glass-card multi" data-value="nature" data-category="experience">
+                        <div class="exp-bg" style="background-image: url('ezgif-281cbf54fb9f87e4-jpg/ezgif-frame-150.jpg')"></div>
+                        <span>Nature</span>
+                    </div>
+                    <div class="exp-card glass-card multi" data-value="culinary" data-category="experience">
+                        <div class="exp-bg" style="background-image: url('ezgif-281cbf54fb9f87e4-jpg/ezgif-frame-170.jpg')"></div>
+                        <span>Culinary</span>
+                    </div>
+                    <div class="exp-card glass-card multi" data-value="nightlife" data-category="experience">
+                        <div class="exp-bg" style="background-image: url('ezgif-281cbf54fb9f87e4-jpg/ezgif-frame-190.jpg')"></div>
+                        <span>Nightlife</span>
+                    </div>
+                    <div class="exp-card glass-card multi" data-value="luxury" data-category="experience">
+                        <div class="exp-bg" style="background-image: url('ezgif-281cbf54fb9f87e4-jpg/ezgif-frame-210.jpg')"></div>
+                        <span>Luxury</span>
+                    </div>
+                    <div class="exp-card glass-card multi" data-value="relaxation" data-category="experience">
+                        <div class="exp-bg" style="background-image: url('ezgif-281cbf54fb9f87e4-jpg/ezgif-frame-230.jpg')"></div>
+                        <span>Pure Relaxation</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: TRAVEL STYLE -->
+        <section class="onboarding-section" id="style" data-index="5">
+            <div class="section-content center">
+                <p class="section-tag">Step 05</p>
+                <h2 class="section-title">Company & Rhythm</h2>
+                <p class="section-question">How do you prefer to travel?</p>
+                
+                <div class="floating-selector">
+                    <div class="style-option" data-value="solo" data-category="style">
+                        <div class="icon">👤</div>
+                        <span>Solo</span>
+                    </div>
+                    <div class="style-option" data-value="couple" data-category="style">
+                        <div class="icon">👥</div>
+                        <span>Couple</span>
+                    </div>
+                    <div class="style-option" data-value="friends" data-category="style">
+                        <div class="icon">🙌</div>
+                        <span>Friends</span>
+                    </div>
+                    <div class="style-option" data-value="family" data-category="style">
+                        <div class="icon">👨‍👩‍👧‍👦</div>
+                        <span>Family</span>
+                    </div>
+                    <div class="style-option" data-value="business" data-category="style">
+                        <div class="icon">💼</div>
+                        <span>Business</span>
+                    </div>
+                    <div class="style-indicator"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: DESTINATION MOOD -->
+        <section class="onboarding-section" id="mood" data-index="6">
+            <div class="slider-overlay">
+                <div class="slider-content">
+                    <p class="section-tag">Step 06</p>
+                    <h2 class="section-title">Atmospheric Inspiration</h2>
+                    <p class="section-question">What atmosphere inspires you most?</p>
+                </div>
+            </div>
+            
+            <div class="mood-slider">
+                <div class="mood-slide active" data-value="tropical" data-category="mood" style="background-image: url('ezgif-281cbf54fb9f87e4-jpg/ezgif-frame-250.jpg')">
+                    <div class="mood-info">
+                        <h3>Tropical Paradise</h3>
+                        <p>Azure waters and golden sands.</p>
+                    </div>
+                </div>
+                <div class="mood-slide" data-value="futuristic" data-category="mood" style="background-image: url('ezgif-281cbf54fb9f87e4-jpg/ezgif-frame-190.jpg')">
+                    <div class="mood-info">
+                        <h3>Futuristic Cities</h3>
+                        <p>Neon horizons and architectural wonders.</p>
+                    </div>
+                </div>
+                <div class="mood-slide" data-value="snow" data-category="mood" style="background-image: url('ezgif-281cbf54fb9f87e4-jpg/ezgif-frame-040.jpg')">
+                    <div class="mood-info">
+                        <h3>Snow Escapes</h3>
+                        <p>Pristine peaks and cozy retreats.</p>
+                    </div>
+                </div>
+                <div class="mood-slide" data-value="ancient" data-category="mood" style="background-image: url('ezgif-281cbf54fb9f87e4-jpg/ezgif-frame-120.jpg')">
+                    <div class="mood-info">
+                        <h3>Ancient Heritage</h3>
+                        <p>Timeless ruins and whispers of history.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="slider-nav">
+                <button class="slider-btn prev">←</button>
+                <div class="slider-dots"></div>
+                <button class="slider-btn next">→</button>
+            </div>
+        </section>
+
+        <!-- SECTION 7: FINAL AI PROFILE SCREEN -->
+        <section class="onboarding-section" id="final" data-index="7">
+            <div class="section-content center">
+                <div class="success-ring">
+                    <svg viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="45"></circle>
+                    </svg>
+                    <div class="check"></div>
+                </div>
+                <h1 class="reveal-text">Your Journey Profile Has Been Created</h1>
+                <p class="summary-text">AI concierge has synchronized your preferences. Your personalized world is ready.</p>
+                
+                <div class="final-card glass-card">
+                    <div class="profile-summary" id="profile-summary-display">
+                        <!-- Filled by JS -->
+                    </div>
+                </div>
+
+                <div class="final-actions">
+                    <button class="cta-button primary" id="explore-btn">
+                        <span>Explore Destinations</span>
+                        <div class="btn-glow"></div>
+                    </button>
+                    <button class="cta-button secondary" id="modify-btn">
+                        <span>Modify Preferences</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div id="particles-js"></div>
+        </section>
+    </main>
+
+    <script src="onboarding.js"></script>
+</body>
+
+</html>

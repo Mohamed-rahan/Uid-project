@@ -255,7 +255,7 @@
     <script>
         // Redirect to index.html if already logged in
         if (localStorage.getItem('isLoggedIn')) {
-            window.location.replace('index.html');
+            window.location.replace('onboarding.html');
         }
 
         // Handle form authentication simulation
@@ -268,7 +268,7 @@
             // Simple client-side check just to test functionality
             if (email && password) {
                 localStorage.setItem('isLoggedIn', 'true');
-                window.location.replace('index.html');
+                window.location.replace('onboarding.html');
             }
         });
 
