@@ -23,8 +23,8 @@ let loadedCount = 0;
 
 // Path to the provided ZIP image sequence
 const currentFrame = index => (
-    `testing/sample.jpg`// [TESTING]
-    // `ezgif-281cbf54fb9f87e4-jpg/ezgif-frame-${(index + 1).toString().padStart(3, '0')}.jpg` // [MAIN]
+    // `testing/sample.jpg`// [TESTING]
+    `ezgif-281cbf54fb9f87e4-jpg/ezgif-frame-${(index + 1).toString().padStart(3, '0')}.jpg` // [MAIN]
 );
 
 // Preload images sequentially to ensure smooth playability
