@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journey Across | Cinematic Experience</title>
+    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:wght@300;400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="loading-screen">
+        <div class="loader-content">
+            <h2 class="loader-title">Journey Across</h2>
+            <div class="progress-bar-container">
+                <div id="progress-bar"></div>
+            </div>
+            <p id="loading-text">Calibrating Cinematic Sequence...</p>
+        </div>
+    </div>
+
+    <!-- UI Overlay Elements -->
+    <div class="nav-overlay">
+        <div class="brand">JOURNEY ACROSS</div>
+        <div class="nav-controls">
+            <div class="audio-toggle muted" id="audio-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <div class="menu-toggle">Menu</div>
+        </div>
+    </div>
+
+    <div class="scroll-progress">
+        <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
+    </div>
+
+    <div class="destination-indicators">
+        <div class="dest-dot active" data-step="0"><span>The World Awaits</span></div>
+        <div class="dest-dot" data-step="1"><span>Departure</span></div>
+        <div class="dest-dot" data-step="2"><span>Immersive Horizons</span></div>
+        <div class="dest-dot" data-step="3"><span>Cinematic Worlds</span></div>
+        <div class="dest-dot" data-step="4"><span>Arrival</span></div>
+    </div>
+
+    <!-- The Cinematic Canvas -->
+    <canvas id="sequence-canvas"></canvas>
+
+    <!-- Scroll Storytelling Structure -->
+    <div class="scroll-container">
+
+        <!-- Section 1: Opening -->
+        <section class="step" id="step-1" style="top: 2%;">
+            <div class="content left">
+                <p class="subtitle">The World Awaits</p>
+                <h1>The World Isn't Meant To Be Seen Once.</h1>
+                <p class="description">An uninterrupted journey beyond horizons. Scroll to explore.</p>
+            </div>
+        </section>
+
+        <!-- Section 2 -->
+        <section class="step" id="step-2" style="top: 22%;">
+            <div class="content right">
+                <p class="subtitle">Departure</p>
+                <h2>Elevate Your Perspective</h2>
+                <p class="description">Break through the atmosphere and experience travel without boundaries.</p>
+            </div>
+        </section>
+
+        <!-- Section 3 -->
+        <section class="step" id="step-3" style="top: 45%;">
+            <div class="content left">
+                <p class="subtitle">Immersive Horizons</p>
+                <h2>A Symphony of Motion</h2>
+                <p class="description">Where every arrival is a revelation. Every cloud parts to unveil something new.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 4 -->
+        <section class="step" id="step-4" style="top: 70%;">
+            <div class="content right">
+                <p class="subtitle">Cinematic Worlds</p>
+                <h2>Watch the World Unfold</h2>
+                <p class="description">No borders. No boundaries. Just a seamless glide across the earth.</p>
+            </div>
+        </section>
+
+        <!-- Section 5 -->
+        <section class="step" id="step-5" style="top: 92%;">
+            <div class="content center">
+                <p class="subtitle">START YOUR JOURNEY</p>
+                <h2>WHERE NEXT?</h2>
+                <p class="description">Log in to start your journey now</p>
+                <div class="login-card">
+                    <form class="login-form" id="loginForm">
+                        <input type="email" class="login-input" id="email" placeholder="Enter your email" required>
+                        <input type="password" class="login-input" id="password" placeholder="Enter your password" required>
+                        <button type="submit" class="login-btn">
+                            Log In
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js?v=2"></script>
+</body>
+
+</html>
